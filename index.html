@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css">
     <title>Calculo de promedio</title>
   </head>
+  
   <body>
     <h2>Seguimiento de Calificaciones de Estudiantes</h2>
+    <!-- Estadísticas -->
+    <div class="stats" id="stats">
+      <h3>Resumen</h3>
+      <p id="total">Total de estudiantes: 0</p>
+      <p id="aprobados">Alumnos aprobados (≥ 4): 0</p>
+      <p id="reprobados">Alumnos reprobados(< 4): 0</p>
+    </div>
+
 
     <div id="average">Promedio de Calificaciones:</div>
+    
+
+
+    <!-- Formulario -->
     <form id="studentForm">
       <div class="formCont">
-        <label for="name">Nombre : </label>
+        <label for="name">Nombre: </label>
         <input type="text" id="name" oninvalid="this.setCustomValidity('Por favor, complete el campo &quot;Nombre&quot;')" oninput="setCustomValidity('')" required />
       </div>
       <div class="formCont">
-        <label for="lastName">Apellido : </label>
+        <label for="lastName">Apellido: </label>
         <input type="text" id="lastName" oninvalid="this.setCustomValidity('Por favor, complete el campo &quot;Apellido&quot;')" oninput="setCustomValidity('')" required />
       </div>
       <div class="formCont">
@@ -25,6 +39,8 @@
       </div>
       <button class="formButton" type="submit">Agregar Estudiante</button>
     </form>
+
+    <!-- Tabla con datos de estudiantes -->
     <table id="studentsTable" cellpadding="8" cellspacing="0">
       <thead>
         <tr>
